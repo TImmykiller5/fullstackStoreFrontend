@@ -42,7 +42,7 @@ export const createOrder = (order) => async(dispatch, getState) =>{
             }
         }
         const {data} = await axios.post(
-            `/api/orders/add/`,
+            `https://fullstack-store.onrender.com/api/orders/add/`,
             order,
             config
         )
@@ -88,7 +88,7 @@ export const getOrderDetails = (id) => async(dispatch, getState) =>{
             }
         }
         const {data} = await axios.get(
-            `/api/orders/${id}/`,
+            `https://fullstack-store.onrender.com/api/orders/${id}/`,
             config
         )
         dispatch({
@@ -122,7 +122,7 @@ export const getMyOrders = () => async(dispatch, getState) =>{
             }
         }
         const {data} = await axios.get(
-            `/api/orders/all/myorders/`,
+            `https://fullstack-store.onrender.com/api/orders/all/myorders/`,
             config
         )
         dispatch({
@@ -156,7 +156,7 @@ export const getOrders = () => async(dispatch, getState) =>{
             }
         }
         const {data} = await axios.get(
-            `/api/orders/`,
+            `https://fullstack-store.onrender.com/api/orders/`,
             config
         )
         dispatch({
@@ -192,7 +192,7 @@ export const orderPay = (id, paymentResult) => async(dispatch, getState) =>{
             }
         }
         const {data} = await axios.put(
-            `/api/orders/${id}/pay/`,
+            `https://fullstack-store.onrender.com/api/orders/${id}/pay/`,
             paymentResult,
             config
         )
@@ -228,7 +228,7 @@ export const orderDeliver = (order) => async(dispatch, getState) =>{
             }
         }
         const {data} = await axios.put(
-            `/api/orders/${order._id}/delivered/`,
+            `https://fullstack-store.onrender.com/api/orders/${order._id}/delivered/`,
             {},
             config
         )

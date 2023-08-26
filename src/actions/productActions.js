@@ -26,7 +26,7 @@ import axios from "axios";
 export const listProducts = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: PRODUCTS_LIST_REQUEST });
-    const { data } = await axios.get(`/api/products/${keyword}`);
+    const { data } = await axios.get(`https://fullstack-store.onrender.com/api/products/${keyword}`);
     dispatch({
       type: PRODUCTS_LIST_SUCCESS,
       payload: data,
@@ -45,7 +45,7 @@ export const listProducts = (keyword = '') => async (dispatch) => {
 export const topProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCTS_TOP_REQUEST });
-    const { data } = await axios.get(`/api/products/top`);
+    const { data } = await axios.get(`https://fullstack-store.onrender.com/api/products/top`);
     dispatch({
       type: PRODUCTS_TOP_SUCCESS,
       payload: data,
@@ -64,7 +64,7 @@ export const topProducts = () => async (dispatch) => {
 export const listProductsDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCTS_DETAILS_REQUEST });
-    const { data } = await axios.get(`/api/products/${id}/`);
+    const { data } = await axios.get(`https://fullstack-store.onrender.com/api/products/${id}/`);
     dispatch({
       type: PRODUCTS_DETAILS_SUCCESS,
       payload: data,
@@ -95,7 +95,7 @@ export const productDelete = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${user.token}`,
       },
     };
-    const { data } = await axios.delete(`/api/products/delete/${id}/`, config);
+    const { data } = await axios.delete(`https://fullstack-store.onrender.com/api/products/delete/${id}/`, config);
     dispatch({
       type: PRODUCTS_DELETE_SUCCESS,
       payload:data
@@ -126,7 +126,7 @@ export const createProduct = () => async (dispatch, getState) => {
         Authorization: `Bearer ${user.token}`,
       },
     };
-    const { data } = await axios.post(`/api/products/create/`, {}, config);
+    const { data } = await axios.post(`https://fullstack-store.onrender.com/api/products/create/`, {}, config);
     dispatch({
       type: PRODUCTS_CREATE_SUCCESS,
       payload: data,
@@ -158,7 +158,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.put(
-      `/api/products/update/${product._id}/`,
+      `https://fullstack-store.onrender.com/api/products/update/${product._id}/`,
       product,
       config
     );
@@ -199,7 +199,7 @@ export const reviewProduct =
         },
       };
       const { data } = await axios.post(
-        `/api/products/${productId}/reviews/`,
+        `https://fullstack-store.onrender.com/api/products/${productId}/reviews/`,
         review,
         config
       );

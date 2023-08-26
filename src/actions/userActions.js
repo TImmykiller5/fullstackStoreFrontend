@@ -49,7 +49,7 @@ export const login = (email, password) => async(dispatch) =>{
             }
         }
         const {data} = await axios.post(
-            '/api/users/login/',
+            'https://fullstack-store.onrender.com/api/users/login/',
             {'username':email, 'password':password},
             config
         )
@@ -92,7 +92,7 @@ export const register = (name, email, password) => async(dispatch) =>{
             }
         }
         const {data} = await axios.post(
-            '/api/users/register',
+            'https://fullstack-store.onrender.com/api/users/register',
             {'name':name, 'email':email, 'password':password},
             config
         )
@@ -131,7 +131,7 @@ export const getUserDetails = (id) => async(dispatch, getState) =>{
             }
         }
         const {data} = await axios.get(
-            `/api/users/${id}/`,
+            `https://fullstack-store.onrender.com/api/users/${id}/`,
             config
         )
         dispatch({
@@ -166,7 +166,7 @@ export const updateUserProfile = (useri) => async(dispatch, getState) =>{
             }
         }
         const {data} = await axios.put(
-            `/api/users/profile/update/`,
+            `https://fullstack-store.onrender.com/api/users/profile/update/`,
             useri,
             config
         )
@@ -209,7 +209,7 @@ export const getUsersList = (id) => async(dispatch, getState) =>{
             }
         }
         const {data} = await axios.get(
-            `/api/users/`,
+            `https://fullstack-store.onrender.com/api/users/`,
             config
         )
         dispatch({
@@ -245,7 +245,7 @@ export const deleteUser = (id) => async(dispatch, getState) =>{
             }
         }
         const {data} = await axios.delete(
-            `/api/user/delete/${id}/`,
+            `https://fullstack-store.onrender.com/api/user/delete/${id}/`,
             config
         )
         dispatch({
@@ -280,7 +280,7 @@ export const updateUser = (User) => async(dispatch, getState) =>{
             }
         }
         const {data} = await axios.put(
-            `/api/user/update/${User._id}/`,
+            `https://fullstack-store.onrender.com/api/user/update/${User._id}/`,
             User,
             config
         )

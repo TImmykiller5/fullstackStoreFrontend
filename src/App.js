@@ -42,7 +42,7 @@ function App() {
     </div>
     );
   };
-  const router = createHashRouter([
+  const router = createBrowserRouter([
     {
       path: '/',
       element: <Layout/>,
